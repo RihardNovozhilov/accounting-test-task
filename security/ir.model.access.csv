@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_volunteers_volunteers,volunteers.volunteers,model_volunteers,volunteer.group_volunteer,1,0,0,0
+access_volunteers_volunteers_admin,volunteers.volunteers.admin,model_volunteers,volunteer.group_volunteer_admin,1,1,1,1
+
+access_garbage_admin,garbage.garbage_admin,model_garbage,volunteer.group_volunteer_admin,1,1,1,1
+access_garbage,garbage.garbage,model_garbage,volunteer.group_volunteer,1,1,1,1

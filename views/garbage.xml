@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="garbage_form_view" model="ir.ui.view">
+            <field name="name">garbage.form</field>
+            <field name="model">garbage</field>
+            <field name="arch" type="xml">
+                <form string="Collected Garbage">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="volunteer_id"/>
+                                <field name="date"/>
+                                <field name="type"/>
+                                <field name="weight"/>
+                                <field name="volume"/>
+                                <field name="density"/>
+                                <field name="total_weight"/>
+                                <field name="total_volume"/>
+                            </group>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="garbage_tree_view" model="ir.ui.view">
+            <field name="name">garbage.tree</field>
+            <field name="model">garbage</field>
+            <field name="arch" type="xml">
+                <tree string="ModelTitle">
+                    <field name="volunteer_id"/>
+                    <field name="date"/>
+                    <field name="type"/>
+                    <field name="weight"/>
+                    <field name="volume"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="garbage_search_view" model="ir.ui.view">
+            <field name="name">garbage.search</field>
+            <field name="model">garbage</field>
+            <field name="arch" type="xml">
+                <search string="Garbage">
+
+                    <field name="volunteer_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="garbage_act_window" model="ir.actions.act_window">
+            <field name="name">Garbage</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">garbage</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add Collected Garbage.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Collected Garbage" id="garbage_menu" parent="volunteer_main_menu" action="garbage_act_window"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="volunteer_form_view" model="ir.ui.view">
+            <field name="name">volunteers.form</field>
+            <field name="model">volunteers</field>
+            <field name="arch" type="xml">
+                <form string="Volunteer">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="display_name" nolabel="1" class="oe_read_only"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="last_name"/>
+                                <field name="year_of_birth"/>
+                                <field name="email" widget="email"/>
+                                <field name="phone" widget="phone"/>
+                                <field name="create_date"/>
+                                <field name="garbage_total_weight"/>
+                                <field name="garbage_total_volume"/>
+                                <field name="address"/>
+                                <button type="action" class="btn-link oe_read_only"
+                                        name="%(volunteer.garbage_act_window)d"
+                                        context="{'search_default_volunteer_id': active_id, 'default_volunteer_id': active_id}"
+                                        string="View collected garbage"
+                                />
+                            </group>
+                            <group>
+                                <field name="image" widget="image"/>
+                            </group>
+
+                            <field name="notes" placeholder="Notes..."/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--        <record id="volunteer_tree_view" model="ir.ui.view">-->
+        <!--            <field name="name">volunteer.tree</field>-->
+        <!--            <field name="model">volunteers</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <tree string="Volunteers">-->
+        <!--                    <field name="create_date"/>-->
+        <!--                    &lt;!&ndash;                    <field name="example_field"/>&ndash;&gt;-->
+        <!--                </tree>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <!--        <record id="ModelName_search_view" model="ir.ui.view">-->
+        <!--            <field name="name">ProjectName.ModelName.search</field>-->
+        <!--            <field name="model">ProjectName.ModelName</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <search string="ModelTitle">-->
+        <!--                    <group expand="1" string="Group By">-->
+        <!--                        <filter string="Example Field" name="example_field" domain="[]"-->
+        <!--                                context="{'group_by':'example_field'}"/>-->
+        <!--                    </group>-->
+        <!--                </search>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <record id="volunteer_act_window" model="ir.actions.act_window">
+            <field name="name">Volunteers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">volunteers</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Volunteers.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="volunteer_main_menu"
+                  name="Accounting"
+                  sequence="1"/>
+
+        <menuitem name="Volunteers" id="volunteer_menu" parent="volunteer_main_menu" action="volunteer_act_window"/>
+
+    </data>
+</odoo>

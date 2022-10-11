@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record forcecreate="True" id="garbage_decimal_dp" model="decimal.precision">
+            <field name="name">Garbage</field>
+            <field name="digits">3</field>
+        </record>
+
+    </data>
+</odoo>
