@@ -60,7 +60,7 @@
                     <field name="arch" type="xml">
                         <search string="Volunteers">
                             <group expand="1" string="Group By">
-                                <filter string="Year" name="example_field" domain="[]"
+                                <filter string="Year" name="year" domain="[]"
                                         context="{'group_by':'year_of_birth'}"/>
 
                                  <field name="name"/>
