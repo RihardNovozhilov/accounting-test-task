@@ -17,7 +17,7 @@
                             <group>
                                 <field name="name"/>
                                 <field name="last_name"/>
-                                <field name="year_of_birth"/>
+                                <field name="year_of_birth" options="{'format': 0}"/>
                                 <field name="email" widget="email"/>
                                 <field name="phone" widget="phone"/>
                                 <field name="create_date"/>
@@ -41,29 +41,33 @@
             </field>
         </record>
 
-        <!--        <record id="volunteer_tree_view" model="ir.ui.view">-->
-        <!--            <field name="name">volunteer.tree</field>-->
-        <!--            <field name="model">volunteers</field>-->
-        <!--            <field name="arch" type="xml">-->
-        <!--                <tree string="Volunteers">-->
-        <!--                    <field name="create_date"/>-->
-        <!--                    &lt;!&ndash;                    <field name="example_field"/>&ndash;&gt;-->
-        <!--                </tree>-->
-        <!--            </field>-->
-        <!--        </record>-->
+                <record id="volunteer_tree_view" model="ir.ui.view">
+                    <field name="name">volunteer.tree</field>
+                    <field name="model">volunteers</field>
+                    <field name="arch" type="xml">
+                        <tree string="Volunteers">
+                            <field name="name"/>
+                            <field name="email"/>
+                            <field name="phone"/>
+                            <field name="create_date"/>
+                        </tree>
+                    </field>
+                </record>
 
-        <!--        <record id="ModelName_search_view" model="ir.ui.view">-->
-        <!--            <field name="name">ProjectName.ModelName.search</field>-->
-        <!--            <field name="model">ProjectName.ModelName</field>-->
-        <!--            <field name="arch" type="xml">-->
-        <!--                <search string="ModelTitle">-->
-        <!--                    <group expand="1" string="Group By">-->
-        <!--                        <filter string="Example Field" name="example_field" domain="[]"-->
-        <!--                                context="{'group_by':'example_field'}"/>-->
-        <!--                    </group>-->
-        <!--                </search>-->
-        <!--            </field>-->
-        <!--        </record>-->
+                <record id="volunteer_search_view" model="ir.ui.view">
+                    <field name="name">volunteer.search</field>
+                    <field name="model">volunteers</field>
+                    <field name="arch" type="xml">
+                        <search string="Volunteers">
+                            <group expand="1" string="Group By">
+                                <filter string="Year" name="example_field" domain="[]"
+                                        context="{'group_by':'year_of_birth'}"/>
+
+                                 <field name="name"/>
+                            </group>
+                        </search>
+                    </field>
+                </record>
 
         <record id="volunteer_act_window" model="ir.actions.act_window">
             <field name="name">Volunteers</field>
@@ -82,6 +86,8 @@
                   sequence="1"/>
 
         <menuitem name="Volunteers" id="volunteer_menu" parent="volunteer_main_menu" action="volunteer_act_window"/>
+        <menuitem name="Collected Garbage" id="garbage_menu" parent="volunteer_main_menu" action="garbage_act_window"/>
+
 
     </data>
 </odoo>

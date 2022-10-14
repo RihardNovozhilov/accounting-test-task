@@ -63,7 +63,6 @@
             </field>
         </record>
 
-        <menuitem name="Collected Garbage" id="garbage_menu" parent="volunteer_main_menu" action="garbage_act_window"/>
 
     </data>
 </odoo>

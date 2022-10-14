@@ -24,12 +24,12 @@
 
     # always loaded
     'data': [
-        'security/ir.model.access.csv',
         'security/volunteer.xml',
-        'views/volunteer.xml',
-        'views/garbage.xml',
-        'views/product_template.xml',
         'data/data.xml',
+        'security/ir.model.access.csv',
+        'views/garbage.xml',
+        'views/volunteer.xml',
+        'views/product_template.xml',
     ],
     # only loaded in demonstration mode
 
